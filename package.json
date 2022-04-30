@@ -4,7 +4,8 @@
   "description": "Monitor sales of Solana NFT Collections and send corresponding notifications to Discord, Twitter, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/t4top/solana-nft-sales-monitor/issues"
   },
-  "homepage": "https://github.com/t4top/solana-nft-sales-monitor#readme"
+  "homepage": "https://github.com/t4top/solana-nft-sales-monitor#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
 }
