@@ -2,10 +2,11 @@
   "name": "@t4top/solana-nft-sales-monitor",
   "version": "0.1.0",
   "description": "Monitor sales of Solana NFT Collections and send corresponding notifications to Discord, Twitter, etc.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write --ignore-path .gitignore ."
+    "format": "prettier --write --ignore-path .gitignore .",
+    "dev": "node ."
   },
   "repository": {
     "type": "git",
