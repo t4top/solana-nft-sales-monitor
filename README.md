@@ -1,6 +1,6 @@
 # solana-nft-sales-monitor
 
-Monitor sales of Solana NFT Collections.
+Monitor sales of Solana NFT Collections and send corresponding notification to Discord.
 
 ## Configuration Parameters
 
@@ -14,6 +14,7 @@ Below are the configuration parameters.
 
 - **name**: The NFT collection name
 - **creatorAddress**: The wallet address of one of the creators of the NFT collection. This program monitors this address for its transactions.
+- **discordWebhook**: The Webhook URL to the Discord channel where NFT sales notification will be posted.
 
 ## Usage
 

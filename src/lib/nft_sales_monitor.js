@@ -5,6 +5,7 @@ import {
   mainnetConn,
   toPublicKey
 } from "./helper/solana.js";
+import { postToDiscord } from "./discord.js";
 import { sleep } from "./helper/sleep.js";
 
 // Minimum polling interval in ms between requests to Solana network
@@ -13,10 +14,14 @@ const POLLING_MIN_INTERVAL = 60000;
 // Number of transactions within a single request
 const REQUEST_TRANSACTIONS_COUNT = 5;
 
+// Base URL to view a transaction details on Solana blockchain
+const TRANSACTION_BASE_URL = "https://solscan.io/tx/";
+
 export class NFTSalesMonitor {
-  constructor({ name, creatorAddress }) {
+  constructor({ name, creatorAddress, discordWebhook }) {
     this.collectionName = name;
     this.creatorAddress = creatorAddress;
+    this.discordWebhook = discordWebhook;
     this.isPaused = true;
   }
 
@@ -38,11 +43,11 @@ export class NFTSalesMonitor {
               collection: vm.collectionName,
               date: new Date(txn.blockTime * 1000),
               signature,
-              transactionURL: `https://solscan.io/tx/${signature}`,
+              transactionURL: `${TRANSACTION_BASE_URL}${signature}`,
               ...parsed
             };
-            // log NFT sales
-            console.log(nftSale);
+            // log & publish parsed NFT sale
+            vm.publishNFTSale(nftSale);
 
             option.until = signature;
           }
@@ -62,5 +67,12 @@ export class NFTSalesMonitor {
 
   pause() {
     this.isPaused = true;
+  }
+
+  async publishNFTSale(nftSale) {
+    // log NFT sales
+    console.log(nftSale);
+    // publish to Discord
+    await postToDiscord(this.discordWebhook, nftSale);
   }
 }

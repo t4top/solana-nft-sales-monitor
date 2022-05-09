@@ -1,10 +1,12 @@
 [
   {
     "name": "Cyber Samurai",
-    "creatorAddress": "EkdRk5DcepUknue16g2bxd5FEcL4CpeeCqgcj2Xh98sX"
+    "creatorAddress": "EkdRk5DcepUknue16g2bxd5FEcL4CpeeCqgcj2Xh98sX",
+    "discordWebhook": "https://discord.com/api/webhooks/56...th"
   },
   {
     "name": "Piggy Sol Gang",
-    "creatorAddress": "Pigv3gFWLWJL8QwrFBkdZLe1RYzNJTSJPGEUNVimJjh"
+    "creatorAddress": "Pigv3gFWLWJL8QwrFBkdZLe1RYzNJTSJPGEUNVimJjh",
+    "discordWebhook": "https://discord.com/api/webhooks/37...Fg"
   }
 ]
