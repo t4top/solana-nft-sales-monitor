@@ -4,7 +4,7 @@ Monitor sales of Solana NFT Collections and send corresponding notification to D
 
 ## Configuration Parameters
 
-The configuration file is `config.json`. It should be placed in the root folder of the repo. A sample `config.sample.json` is provided as a reference.
+The configuration file is `config.json`. It should be placed in the root folder of the repo. A sample [config.sample.json](config.sample.json) is provided as a reference.
 
 Rename `config.sample.json` to `config.json` and update according to your needs.
 
@@ -23,3 +23,9 @@ Run below command to start the monitoring loop. You can exit the program by pres
 ```bash
 npm run dev
 ```
+
+## Result
+
+A sample Discord post is shown below. The embed content can be customized within [src/lib/discord.js](src/lib/discord.js).
+
+![Sample Discord Post](sample_discord_post.png)
