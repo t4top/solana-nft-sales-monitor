@@ -103,15 +103,15 @@ export class NFTMarketplace {
   // like regular sales, bid sale, accept offer, auction, etc.
   calculateSalesPrice(txn, buyer) {
     const salesPrice =
-      this.priceFromInnerInstructions(txn, buyer) ||
-      this.priceFromMsgInstructions(txn, buyer) ||
-      this.priceFromBalances(txn, buyer);
+      this.getPriceFromInnerInstructions(txn, buyer) ||
+      this.getPriceFromMsgInstructions(txn, buyer) ||
+      this.getPriceFromBalances(txn, buyer);
 
     return salesPrice / LAMPORTS_PER_SOL;
   }
 
   // calculate price from InnerInstructions. This works for regular sales in most markeplaces.
-  priceFromInnerInstructions(txn, buyer) {
+  getPriceFromInnerInstructions(txn, buyer) {
     const { innerInstructions } = txn.meta;
     let listPrice = 0;
     let bidPrice = 0;
@@ -130,7 +130,7 @@ export class NFTMarketplace {
   }
 
   // calculate price from message instructions. This works for transactions done in Wrapped SOL.
-  priceFromMsgInstructions(txn, buyer) {
+  getPriceFromMsgInstructions(txn, buyer) {
     const { instructions } = txn.transaction.message;
     let listPrice = 0;
     let bidPrice = 0;
@@ -148,7 +148,7 @@ export class NFTMarketplace {
 
   // calculate price from balances of the buyer. This works if other methods fail.
   // Trasaction fees are included in sales price.
-  priceFromBalances(txn, buyer) {
+  getPriceFromBalances(txn, buyer) {
     const { preBalances, postBalances } = txn.meta;
     const { accountKeys } = txn.transaction.message;
     const buyerIndex = accountKeys.findIndex(accnt => accnt.pubkey?.toBase58() === buyer);
