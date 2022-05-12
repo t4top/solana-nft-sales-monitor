@@ -35,22 +35,10 @@ export class NFTSalesMonitor {
         const signatures = await getAccountSignatures(mainnetConn, addrKey, option);
 
         await signatures.reverse().forEach(async ({ signature }) => {
-          const txn = await getParsedTransaction(mainnetConn, signature);
-
-          if (txn) {
-            const parsed = await processNFTTransaction(txn);
-            const nftSale = {
-              collection: vm.collectionName,
-              date: new Date(txn.blockTime * 1000),
-              signature,
-              transactionURL: `${TRANSACTION_BASE_URL}${signature}`,
-              ...parsed
-            };
-            // log & publish parsed NFT sale
-            vm.publishNFTSale(nftSale);
-
-            option.until = signature;
-          }
+          const nftSale = await vm.parseSignature(signature);
+          // log & publish parsed NFT sale
+          if (nftSale) await vm.publishNFTSale(nftSale);
+          option.until = signature;
         });
       } catch (e) {
         console.log("NFTSalesMonitor Error:", e, "\nCollection Name:", vm.collectionName);
@@ -67,6 +55,25 @@ export class NFTSalesMonitor {
 
   pause() {
     this.isPaused = true;
+  }
+
+  async parseSignature(signature) {
+    let nftSale;
+    const txn = await getParsedTransaction(mainnetConn, signature);
+
+    if (txn) {
+      const parsed = await processNFTTransaction(txn);
+      parsed &&
+        (nftSale = {
+          date: new Date(txn.blockTime * 1000),
+          collection: this.collectionName,
+          signature,
+          transactionURL: `${TRANSACTION_BASE_URL}${signature}`,
+          ...parsed
+        });
+    }
+
+    return nftSale;
   }
 
   async publishNFTSale(nftSale) {
