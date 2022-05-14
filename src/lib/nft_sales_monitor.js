@@ -5,8 +5,9 @@ import {
   mainnetConn,
   toPublicKey
 } from "./helper/solana.js";
-import { postToDiscord } from "./discord.js";
 import { sleep } from "./helper/sleep.js";
+import { logToConsole } from "./helper/log.js";
+import { postToDiscord } from "./discord.js";
 
 // Minimum polling interval in ms between requests to Solana network
 const POLLING_MIN_INTERVAL = 60000;
@@ -78,7 +79,7 @@ export class NFTSalesMonitor {
 
   async publishNFTSale(nftSale) {
     // log NFT sales
-    console.log(nftSale);
+    logToConsole(nftSale);
     // publish to Discord
     await postToDiscord(this.discordWebhook, nftSale);
   }

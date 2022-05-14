@@ -18,9 +18,10 @@ Below are the configuration parameters.
 
 ## Usage
 
-Run below command to start the monitoring loop. You can exit the program by pressing `CTRL + C` on the terminal window.
+Run below commands to install dependent packages and to start the monitoring loop. You can exit the program by pressing `CTRL + C` on the terminal window.
 
 ```bash
+npm install
 npm run dev
 ```
 

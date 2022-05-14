@@ -10,7 +10,8 @@ export const mainnetConn = getConnection(MAINNET_ENDPOINT, "confirmed");
 
 export const toPublicKey = addr => new PublicKey(addr);
 
-export const shortenAddress = addr => `${addr.slice(0, 6)}...${addr.slice(-6)}`;
+export const shortenAddress = (addr, limit = 6) =>
+  `${addr.slice(0, limit)}...${addr.slice(-limit)}`;
 
 export const getAccountSignatures = async (conn, addr, option) => {
   return (await conn.getSignaturesForAddress(toPublicKey(addr), option)) || [];
