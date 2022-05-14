@@ -35,12 +35,13 @@ export class NFTSalesMonitor {
         const addrKey = toPublicKey(vm.creatorAddress);
         const signatures = await getAccountSignatures(mainnetConn, addrKey, option);
 
-        await signatures.reverse().forEach(async ({ signature }) => {
+        // process in reverse to have the entries in chronological order
+        for (let i = signatures.length - 1; i >= 0; i--) {
+          const { signature } = signatures[i];
           const nftSale = await vm.parseSignature(signature);
-          // log & publish parsed NFT sale
           if (nftSale) await vm.publishNFTSale(nftSale);
           option.until = signature;
-        });
+        }
       } catch (e) {
         console.log("NFTSalesMonitor Error:", e, "\nCollection Name:", vm.collectionName);
       }
