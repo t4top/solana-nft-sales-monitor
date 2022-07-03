@@ -19,9 +19,10 @@ const REQUEST_TRANSACTIONS_COUNT = 5;
 const TRANSACTION_BASE_URL = "https://solscan.io/tx/";
 
 export class NFTSalesMonitor {
-  constructor({ name, creatorAddress, discordWebhook }) {
+  constructor({ name, creatorAddress, startAfterHash, discordWebhook }) {
     this.collectionName = name;
     this.creatorAddress = creatorAddress;
+    this.startAfterHash = startAfterHash;
     this.discordWebhook = discordWebhook;
     this.isPaused = true;
   }
@@ -29,6 +30,8 @@ export class NFTSalesMonitor {
   async run() {
     let option = { limit: REQUEST_TRANSACTIONS_COUNT };
     const vm = this;
+
+    if (vm.startAfterHash) option.until = vm.startAfterHash;
 
     while (!vm.isPaused) {
       try {
