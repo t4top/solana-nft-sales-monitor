@@ -1,14 +1,9 @@
-import { readFileSync, existsSync } from "fs";
+import { CONFIG_FILE, config } from "./lib/helper/config.js";
 import { NFTSalesMonitor } from "./lib/nft_sales_monitor.js";
 import { randomSleep } from "./lib/helper/sleep.js";
 
-const CONFIG_FILE = "config.json";
-
-const readConfig = () =>
-  existsSync(CONFIG_FILE) ? JSON.parse(readFileSync(CONFIG_FILE, "utf-8")) : [];
-
 const runNFTSalesMonitor = async () => {
-  const collections = readConfig();
+  const { collections } = config;
 
   if (!(collections && collections.length))
     return console.log(`No collection found. Make sure ${CONFIG_FILE} is properly configured.`);
