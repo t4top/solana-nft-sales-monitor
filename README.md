@@ -1,28 +1,73 @@
 # solana-nft-sales-monitor
 
-Monitor sales of Solana NFT Collections and send corresponding notification to Discord.
+Monitor sales of Solana NFT Collections and sends corresponding notification to Discord.
 
-## Configuration Parameters
+Sales from the following marketplaces are supported.
 
-The configuration file is `config.json`. It should be placed in the root folder of the repo. A sample [config.sample.json](config.sample.json) is provided as a reference.
+- [Alpha Art](https://alpha.art)
+- [Digital Eyes](https://digitaleyes.market)
+- [Exchange Art](https://exchange.art)
+- [Magiceden](https://magiceden.io)
+- [Auction House](https://docs.metaplex.com/guides/auction-house/definition)
+- [Solana Monkey Business](https://market.solanamonkey.business)
+- [Solanart](https://solanart.io)
+- [Solport](https://solport.io)
+- [Solsea](https://solsea.io)
 
-Rename `config.sample.json` to `config.json` and update according to your needs.
-
-The configuration is an array of settings. Multiple collections can be specified.
-
-Below are the configuration parameters.
-
-- **name**: The NFT collection name
-- **creatorAddress**: The wallet address of one of the creators of the NFT collection. This program monitors this address for its transactions.
-- **discordWebhook**: The Webhook URL to the Discord channel where NFT sales notification will be posted.
+Any other sales not from above marketplaces are classified as `Unknown`.
 
 ## Usage
 
-Run below commands to install dependent packages and to start the monitoring loop. You can exit the program by pressing `CTRL + C` on the terminal window.
+Follow below steps to setup your NFT sales monitor.
 
-```bash
+### 1. Pre-requisite
+
+There are few prerequisites for this application. You need to have `NodeJS` and `git` installed.
+
+### 2. Get the application
+
+Clone this repo and install its package dependencies.
+
+```
+git clone https://github.com/t4top/solana-nft-sales-monitor.git
+cd solana-nft-sales-monitor
 npm install
-npm run dev
+```
+
+### 3. Setup the configuration parameters
+
+The configuration file is `config.json`. It should be placed in the root folder of the repo. A sample [config.sample.json](config.sample.json) is provided as a reference.
+
+Rename `config.sample.json` to `config.json` and add settings for your collections.
+
+#### Configurable parameters
+
+| Parameter | Datatype | Required | Remark |
+| --- | --- | --- | --- |
+| rpcEndpoint | string | No | Solana RPC endpoint e.g. https://api.mainnet-beta.solana.com |
+| collections | array | Yes | Array containing configuration settings for each `collection`. Each collection is an object with the parameters in below table. Multiple collections can be specified. |
+
+#### Parameters for each `collection`
+
+| Parameter | Datatype | Required | Remark |
+| --- | --- | --- | --- |
+| name | string | Yes | NFT collection name |
+| creatorAddress | string | Yes | Wallet address of one of the creators of the NFT collection. This application monitors this address for its transactions. |
+| startAfterHash | string | No | Transaction hash after which the application will start to monitor NFT sales. |
+| discordWebhook | string | No | Webhook URL to the Discord channel where NFT sales notification will be posted. |
+
+### 4. Start the application
+
+Run below command to start the application as a background service.
+
+```
+npm start
+```
+
+To stop the application, run below command.
+
+```
+npm stop
 ```
 
 ## Result
