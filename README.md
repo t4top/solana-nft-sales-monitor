@@ -5,7 +5,7 @@ Monitor sales of Solana NFT Collections and sends corresponding notification to 
 Sales from the following marketplaces are supported.
 
 - [Alpha Art](https://alpha.art)
-- [Auction House](https://docs.metaplex.com/guides/auction-house/definition)
+- [Auction House](https://docs.metaplex.com/guides/auction-house/definition) (used by [OpenSea](https://opensea.io/) and [Coral Cube](https://coralcube.io))
 - [Digital Eyes](https://digitaleyes.market)
 - [Exchange Art](https://exchange.art)
 - [Magiceden](https://magiceden.io)
@@ -42,19 +42,19 @@ Rename `config.sample.json` to `config.json` and add settings for your collectio
 
 #### Configurable parameters
 
-| Parameter | Datatype | Required | Remark |
-| --- | --- | --- | --- |
-| rpcEndpoint | string | No | Solana RPC endpoint e.g. https://api.mainnet-beta.solana.com |
-| collections | array | Yes | Array containing configuration settings for each `collection`. Each collection is an object with the parameters in below table. Multiple collections can be specified. |
+| Parameter   | Datatype | Required | Remark                                                                                                                                                                 |
+| ----------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| rpcEndpoint | string   | No       | Solana RPC endpoint e.g. https://api.mainnet-beta.solana.com                                                                                                           |
+| collections | array    | Yes      | Array containing configuration settings for each `collection`. Each collection is an object with the parameters in below table. Multiple collections can be specified. |
 
 #### Parameters for each `collection`
 
-| Parameter | Datatype | Required | Remark |
-| --- | --- | --- | --- |
-| name | string | Yes | NFT collection name |
-| creatorAddress | string | Yes | Wallet address of one of the creators of the NFT collection. This application monitors this address for its transactions. |
-| startAfterHash | string | No | Transaction hash after which the application will start to monitor NFT sales. |
-| discordWebhook | string | No | Webhook URL to the Discord channel where NFT sales notification will be posted. |
+| Parameter      | Datatype | Required | Remark                                                                                                                    |
+| -------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| name           | string   | Yes      | NFT collection name                                                                                                       |
+| creatorAddress | string   | Yes      | Wallet address of one of the creators of the NFT collection. This application monitors this address for its transactions. |
+| startAfterHash | string   | No       | Transaction hash after which the application will start to monitor NFT sales.                                             |
+| discordWebhook | string   | No       | Webhook URL to the Discord channel where NFT sales notification will be posted.                                           |
 
 ### 4. Start the application
 
