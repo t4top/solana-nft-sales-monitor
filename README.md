@@ -5,10 +5,10 @@ Monitor sales of Solana NFT Collections and sends corresponding notification to 
 Sales from the following marketplaces are supported.
 
 - [Alpha Art](https://alpha.art)
+- [Auction House](https://docs.metaplex.com/guides/auction-house/definition)
 - [Digital Eyes](https://digitaleyes.market)
 - [Exchange Art](https://exchange.art)
 - [Magiceden](https://magiceden.io)
-- [Auction House](https://docs.metaplex.com/guides/auction-house/definition)
 - [Solana Monkey Business](https://market.solanamonkey.business)
 - [Solanart](https://solanart.io)
 - [Solport](https://solport.io)
