@@ -1,12 +1,13 @@
 import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
 import { programs } from "@metaplex/js";
 import axios from "axios";
+import { config } from "./config.js";
 
-const MAINNET_ENDPOINT = clusterApiUrl("mainnet-beta");
+const rpcEndpoint = config.rpcEndpoint || clusterApiUrl("mainnet-beta");
 
 export const getConnection = (endpoint, commitment) => new Connection(endpoint, commitment);
 
-export const mainnetConn = getConnection(MAINNET_ENDPOINT, "confirmed");
+export const mainnetConn = getConnection(rpcEndpoint, "confirmed");
 
 export const toPublicKey = addr => new PublicKey(addr);
 

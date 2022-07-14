@@ -7,7 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write --ignore-path .gitignore .",
-    "dev": "node ."
+    "dev": "node .",
+    "start": "pm2 start --name \"solana-nft-sales-monitor\" node -- .",
+    "stop": "pm2 delete solana-nft-sales-monitor"
   },
   "repository": {
     "type": "git",
@@ -27,11 +29,12 @@
   },
   "homepage": "https://github.com/t4top/solana-nft-sales-monitor#readme",
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "pm2": "^5.2.0",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
     "@metaplex/js": "^4.12.0",
-    "@solana/web3.js": "^1.41.3",
+    "@solana/web3.js": "^1.47.3",
     "axios": "^0.27.2"
   }
 }
