@@ -1,8 +1,8 @@
 import alphaArt from "./alphaart.js";
+import auctionHouse from "./auctionhouse.js";
 import digitalEyes from "./digitaleyes.js";
 import exchangeArt from "./exchangeart.js";
 import magicEden from "./magiceden.js";
-import openSea from "./opensea.js";
 import smb from "./smb.js";
 import solanart from "./solanart.js";
 import solport from "./solport.js";
@@ -11,10 +11,10 @@ import unknown from "./unknown.js";
 
 const marketplaces = [
   alphaArt,
+  auctionHouse,
   digitalEyes,
   exchangeArt,
   magicEden,
-  openSea,
   smb,
   solanart,
   solport,
