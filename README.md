@@ -5,9 +5,11 @@ Monitor sales of Solana NFT Collections and sends corresponding notification to 
 Sales from the following marketplaces are supported.
 
 - [Alpha Art](https://alpha.art)
-- [Auction House](https://docs.metaplex.com/guides/auction-house/definition) (used by [OpenSea](https://opensea.io/) and [Coral Cube](https://coralcube.io))
+- [Auction House](https://docs.metaplex.com/guides/auction-house/definition) (used by [OpenSea](https://opensea.io/) and [Fractal](https://www.fractal.is/))
+- [Coral Cube](https://coralcube.io)
 - [Digital Eyes](https://digitaleyes.market)
 - [Exchange Art](https://exchange.art)
+- [Hyperspace](https://hyperspace.xyz)
 - [Magiceden](https://magiceden.io)
 - [Solana Monkey Business](https://market.solanamonkey.business)
 - [Solanart](https://solanart.io)

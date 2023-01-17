@@ -1,7 +1,9 @@
 import alphaArt from "./alphaart.js";
 import auctionHouse from "./auctionhouse.js";
+import coralCube from "./coralcube.js";
 import digitalEyes from "./digitaleyes.js";
 import exchangeArt from "./exchangeart.js";
+import hyperspace from "./hyperspace.js";
 import magicEden from "./magiceden.js";
 import smb from "./smb.js";
 import solanart from "./solanart.js";
@@ -12,8 +14,10 @@ import unknown from "./unknown.js";
 const marketplaces = [
   alphaArt,
   auctionHouse,
+  coralCube,
   digitalEyes,
   exchangeArt,
+  hyperspace,
   magicEden,
   smb,
   solanart,
