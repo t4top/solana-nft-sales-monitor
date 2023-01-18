@@ -77,3 +77,11 @@ npm stop
 A sample Discord post is shown below. The embed content can be customized within [src/lib/discord.js](src/lib/discord.js).
 
 ![Sample Discord Post](sample_discord_post.png)
+
+## Buy me a coffee
+
+Solana Wallet: [BFSi8WeoE2bLJtMUpB6KVggJZ4Uv5DavVrVsm5kdrQwY](solana:BFSi8WeoE2bLJtMUpB6KVggJZ4Uv5DavVrVsm5kdrQwY?label=Buy%20t4top%20a%20coffee&message=Thanks%20for%20your%20support&memo=Solana%20Pay)
+
+## License
+
+[GPL-3.0](./LICENSE)
