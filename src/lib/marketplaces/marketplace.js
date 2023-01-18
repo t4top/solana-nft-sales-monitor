@@ -32,7 +32,7 @@ export class NFTMarketplace {
     // return if buyer & seller are the same (i.e NFT delist)
     if (buyer === seller) return;
 
-    const salesPrice = this.calculateSalesPrice(txn, buyer);
+    const salesPrice = this.calculateSalesPrice(txn, buyer) / LAMPORTS_PER_SOL;
 
     // return if sales price can't be correctly calculated
     if (salesPrice <= 0) return;
@@ -107,7 +107,7 @@ export class NFTMarketplace {
       this.getPriceFromMsgInstructions(txn, buyer) ||
       this.getPriceFromBalances(txn, buyer);
 
-    return salesPrice / LAMPORTS_PER_SOL;
+    return salesPrice;
   }
 
   // calculate price from InnerInstructions. This works for regular sales in most markeplaces.

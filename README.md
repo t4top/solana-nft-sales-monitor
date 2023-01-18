@@ -5,9 +5,11 @@ Monitor sales of Solana NFT Collections and sends corresponding notification to 
 Sales from the following marketplaces are supported.
 
 - [Alpha Art](https://alpha.art)
-- [Auction House](https://docs.metaplex.com/guides/auction-house/definition) (used by [OpenSea](https://opensea.io/) and [Coral Cube](https://coralcube.io))
+- [Auction House](https://docs.metaplex.com/guides/auction-house/definition) (used by [OpenSea](https://opensea.io/) and [Fractal](https://www.fractal.is/))
+- [Coral Cube](https://coralcube.io)
 - [Digital Eyes](https://digitaleyes.market)
 - [Exchange Art](https://exchange.art)
+- [Hyperspace](https://hyperspace.xyz)
 - [Magiceden](https://magiceden.io)
 - [Solana Monkey Business](https://market.solanamonkey.business)
 - [Solanart](https://solanart.io)
@@ -75,3 +77,11 @@ npm stop
 A sample Discord post is shown below. The embed content can be customized within [src/lib/discord.js](src/lib/discord.js).
 
 ![Sample Discord Post](sample_discord_post.png)
+
+## Buy me a coffee
+
+Solana Wallet: [BFSi8WeoE2bLJtMUpB6KVggJZ4Uv5DavVrVsm5kdrQwY](solana:BFSi8WeoE2bLJtMUpB6KVggJZ4Uv5DavVrVsm5kdrQwY?label=Buy%20t4top%20a%20coffee&message=Thanks%20for%20your%20support&memo=Solana%20Pay)
+
+## License
+
+[GPL-3.0](./LICENSE)
