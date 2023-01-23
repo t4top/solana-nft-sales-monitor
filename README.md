@@ -9,6 +9,7 @@ Sales from the following marketplaces are supported.
 - [Coral Cube](https://coralcube.io)
 - [Digital Eyes](https://digitaleyes.market)
 - [Exchange Art](https://exchange.art)
+- [Hadeswap](https://www.hadeswap.com/)
 - [Hyperspace](https://hyperspace.xyz)
 - [Magiceden](https://magiceden.io)
 - [Solana Monkey Business](https://market.solanamonkey.business)
