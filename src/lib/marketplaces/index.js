@@ -3,6 +3,7 @@ import auctionHouse from "./auctionhouse.js";
 import coralCube from "./coralcube.js";
 import digitalEyes from "./digitaleyes.js";
 import exchangeArt from "./exchangeart.js";
+import hadeswap from "./hadeswap.js";
 import hyperspace from "./hyperspace.js";
 import magicEden from "./magiceden.js";
 import smb from "./smb.js";
@@ -17,6 +18,7 @@ const marketplaces = [
   coralCube,
   digitalEyes,
   exchangeArt,
+  hadeswap,
   hyperspace,
   magicEden,
   smb,
