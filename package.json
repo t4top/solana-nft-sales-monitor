@@ -1,6 +1,6 @@
 {
   "name": "@t4top/solana-nft-sales-monitor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Monitor sales of Solana NFT Collections and send corresponding notifications to Discord, Twitter, etc.",
   "main": "src/index.js",
   "type": "module",
